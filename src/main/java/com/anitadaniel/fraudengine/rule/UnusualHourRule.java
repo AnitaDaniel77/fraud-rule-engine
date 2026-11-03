@@ -36,7 +36,7 @@ public class UnusualHourRule implements FraudRule {
         boolean bigEnough = transaction.getAmount().compareTo(minAmount) >= 0;
 
         if (atNight && bigEnough) {
-            return Optional.of(new FraudFlag(transaction, "UNUSUAL_HOUR", Severity.LOW, "Amount " + transaction.getAmount() + "spent at " + hour + ":00"));
+            return Optional.of(new FraudFlag(transaction, "UNUSUAL_HOUR", Severity.LOW, "Amount " + transaction.getAmount() + " spent at " + hour + ":00"));
         }
         return Optional.empty();
     }
