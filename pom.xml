@@ -11,11 +11,14 @@
 	<groupId>com.anitadaniel</groupId>
 	<artifactId>fraud-rule-engine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
-	<description/>
-	<url/>
+	<name>Fraud Rule Engine</name>
+	<description>Fraud detection rule engine</description>
+	<url>https://github.com/AnitaDaniel77/fraud-rule-engine</url>
 	<licenses>
-		<license/>
+		<license>
+			<name>MIT License</name>
+			<url>https://opensource.org/licenses/MIT</url>
+		</license>
 	</licenses>
 	<developers>
 		<developer/>
@@ -49,6 +52,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>3.2.0</version>
 		</dependency>
 
 		<dependency>
