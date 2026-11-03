@@ -7,6 +7,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.http.HttpStatus;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -30,5 +31,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleUnreadable(HttpMessageNotReadableException ex) {
         ErrorResponse body = new ErrorResponse(400, "Request body is missing or not valid JSON", Map.of());
         return ResponseEntity.badRequest().body(body);
+    }
+
+        // runs when something asked for does not exist
+    @ExceptionHandler(NotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleNotFound(NotFoundException ex) {
+        ErrorResponse body = new ErrorResponse(404, ex.getMessage(), Map.of());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(body); // 404 Not Found
     }
 }

@@ -18,7 +18,7 @@ public record TransactionRequest(
         @NotBlank String country,
         @NotNull Instant occurredAt) { // when the purchase happened, in UTC
 
-    // turns the request into the entity we save
+      // turns the request into the entity to save
     public Transaction toEntity() {
         return new Transaction(accountId, amount, currency, category, merchant, country, occurredAt);
     }

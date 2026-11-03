@@ -9,4 +9,7 @@ public interface FraudFlagRepository extends JpaRepository<FraudFlag, String> {
 
     // all flags raised for one transaction
     List<FraudFlag> findByTransactionId(String transactionId);
+    List<FraudFlag> findByTransactionAccountId(String accountId); // flags for one account
+    List<FraudFlag> findByRuleCode(String ruleCode); // flags from one rule
+    List<FraudFlag> findByTransactionAccountIdAndRuleCode(String accountId, String ruleCode); // both
 }

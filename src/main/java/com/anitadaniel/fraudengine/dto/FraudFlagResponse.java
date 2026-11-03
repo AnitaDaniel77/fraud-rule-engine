@@ -12,7 +12,7 @@ public record FraudFlagResponse(
         String reason,
         Instant createdAt) {
 
-    // copies the fields we want to show from the entity
+     // copies the fields to show from the entity
     public static FraudFlagResponse from(FraudFlag flag) {
         return new FraudFlagResponse(flag.getId(), flag.getRuleCode(), flag.getSeverity(),
                 flag.getReason(), flag.getCreatedAt());
