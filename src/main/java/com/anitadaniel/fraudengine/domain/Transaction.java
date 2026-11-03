@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.UUID;
+import java.math.RoundingMode;
 
 // one card transaction received by the service, saved in the transactions table
 @Entity
@@ -52,7 +53,7 @@ public class Transaction {
     // builds a new transaction, id and receivedAt fill themselves in
     public Transaction(String accountId, BigDecimal amount, String currency, String category, String merchant, String country, Instant occurredAt) {
         this.accountId = accountId;
-        this.amount = amount;
+        this.amount = amount.setScale(2, RoundingMode.HALF_UP); // always keep two decimal places
         this.currency = currency;
         this.category = category;
         this.merchant = merchant;
