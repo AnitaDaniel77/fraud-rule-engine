@@ -25,13 +25,21 @@ git clone https://github.com/AnitaDaniel77/fraud-rule-engine.git
 cd fraud-rule-engine
 ```
 
-Everything is now in that folder. The main parts are:
+Everything is now in that folder. All paths below are relative to it.
 
-- `src/main/java` the service code (controllers, services, rules, entities)
-- `src/test/java` the automated tests
+- `src/main/java/com/anitadaniel/fraudengine/` the service code
+- `src/main/java/com/anitadaniel/fraudengine/controller/` the REST endpoints
+- `src/main/java/com/anitadaniel/fraudengine/rule/` the four fraud rules
+- `src/main/java/com/anitadaniel/fraudengine/service/` the fraud check and the lookups
+- `src/main/resources/application.properties` the settings and rule limits
+- `src/test/java/com/anitadaniel/fraudengine/` the automated tests
 - `docs/ERD.md` the database diagram
+- `docs/images/` the screenshots used in this README
 - `Dockerfile` the Docker build
-- `src/main/resources/application.properties` the settings
+- `.github/workflows/ci.yml` the automatic checks on GitHub
+- `pom.xml` the Maven build file and the list of libraries
+- `target/fraud-rule-engine-0.0.1-SNAPSHOT.jar` the built jar, created by `./mvnw clean package`
+- `data/fraud.mv.db` the database file, created on the first run
 
 ## Run the service
 
@@ -77,7 +85,7 @@ Example response:
 {
   "id": "b63c97d5-2a1d-4dca-8ea3-4ccdd6f631eb",
   "accountId": "ACC-1001",
-  "amount": 15000,
+  "amount": 15000.00,
   "currency": "ZAR",
   "category": "GAMBLING",
   "merchant": "Test Casino",
