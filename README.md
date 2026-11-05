@@ -52,7 +52,7 @@ Everything is now in that folder. All paths below are relative to it.
 On Windows Command Prompt use `mvnw.cmd spring-boot:run` instead.
 
 2. Wait until the log shows `Started FraudRuleEngineApplication`.
-3. Check it is alive by opening `http://localhost:8080/actuator/health` in a browser. It should show `{"status":"UP"}`.
+3. Check it is alive by opening `http://localhost:8080/actuator/health` in a browser. It should include `"status":"UP"`.
 4. Stop it any time with Ctrl+C.
 
 ## Try it
